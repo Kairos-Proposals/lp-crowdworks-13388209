@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos Proposal ｜ persia3様への提案書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#1B2A4A;
+    --sky:#89A9C9;
+    --cream:#F7F2E7;
+    --gold:#D9A441;
+    --teal:#4A8B8B;
+    --ink:#2B2320;
+    --tan:#E8DCC8;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.9;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{
+    font-family:'Shippori Mincho', serif;
+    font-weight:600;
+    letter-spacing:.03em;
+  }
+
+  .en{
+    font-family:'Cormorant Garamond', serif;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:linear-gradient(180deg,var(--night) 0%, var(--night) 45%, var(--sky) 100%);
+    color:var(--cream);
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:80px 0 60px;
+  }
+
+  .stars{
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(2px 2px at 12% 20%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1.5px 1.5px at 30% 12%, rgba(255,255,255,.55), transparent),
+      radial-gradient(1.5px 1.5px at 68% 8%, rgba(255,255,255,.5), transparent),
+      radial-gradient(2px 2px at 82% 25%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.5px 1.5px at 45% 30%, rgba(255,255,255,.4), transparent),
+      radial-gradient(1.5px 1.5px at 90% 15%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1.5px 1.5px at 20% 40%, rgba(255,255,255,.35), transparent);
+    background-repeat:no-repeat;
+    opacity:.9;
+  }
+
+  .flightpath{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+  }
+
+  .plane{
+    position:absolute;
+    width:14px;height:14px;
+    background:var(--gold);
+    clip-path:polygon(0 0, 100% 50%, 0 100%, 25% 50%);
+    top:22%;
+    left:78%;
+    transform:rotate(35deg);
+    filter:drop-shadow(0 0 6px rgba(217,164,65,.8));
+  }
+
+  .hero-inner{position:relative;z-index:2;width:100%;}
+
+  .ticket-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid rgba(247,242,231,.5);
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:.75rem;
+    margin-bottom:34px;
+    background:rgba(255,255,255,.05);
+  }
+
+  .ticket-tag .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--gold);
+  }
+
+  .hero h1{
+    font-size:clamp(2rem, 4.6vw, 3.4rem);
+    line-height:1.6;
+    max-width:820px;
+    margin-bottom:28px;
+  }
+
+  .hero h1 span{color:var(--gold);}
+
+  .hero p.lead{
+    font-size:1.02rem;
+    max-width:560px;
+    color:rgba(247,242,231,.85);
+    margin-bottom:44px;
+  }
+
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    font-size:.82rem;
+    color:rgba(247,242,231,.7);
+  }
+
+  .hero-meta div{border-left:2px solid var(--gold);padding-left:12px;}
+  .hero-meta b{display:block;color:var(--cream);font-size:.95rem;font-family:'Shippori Mincho',serif;margin-bottom:2px;}
+
+  /* ---------- SECTION COMMON ---------- */
+  section{padding:100px 0;position:relative;}
+
+  .section-label{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:24px;
+  }
+  .section-label .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1rem;color:var(--teal);
+    letter-spacing:.2em;
+  }
+  .section-label .line{flex:1;height:1px;background:linear-gradient(90deg, var(--teal), transparent);}
+
+  h2.section-title{
+    font-size:clamp(1.5rem,3vw,2.1rem);
+    margin-bottom:20px;
+  }
+
+  /* ---------- UNDERSTANDING ---------- */
+  .understanding{background:var(--cream);}
+  .stamp-quote{
+    position:relative;
+    background:var(--tan);
+    border-radius:4px;
+    padding:44px 40px;
+    max-width:760px;
+    margin:36px 0 40px;
+  }
+  .stamp{
+    position:absolute;
+    top:-22px;right:20px;
+    width:96px;height:96px;
+    border:2px solid var(--teal);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    transform:rotate(-14deg);
+    background:var(--cream);
+    color:var(--teal);
+    font-family:'Cormorant Garamond',serif;
+    font-size:.68rem;
+    letter-spacing:.12em;
+    text-align:center;
+    line-height:1.3;
+  }
+  .stamp span{display:block;font-size:1rem;font-weight:600;}
+
+  .stamp-quote p{font-size:1.05rem;color:var(--ink);}
+  .stamp-quote p.strong{
+    font-family:'Shippori Mincho',serif;
+    font-size:1.2rem;
+    color:var(--night);
+    margin-bottom:14px;
+  }
+
+  .understanding-points{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:40px;
+  }
+  .u-item{
+    border-top:2px solid var(--teal);
+    padding-top:14px;
+  }
+  .u-item .en{font-size:.72rem;color:var(--teal);display:block;margin-bottom:8px;}
+  .u-item p{font-size:.9rem;}
+
+  /* ---------- VALUES (tickets) ---------- */
+  .values{background:var(--night);color:var(--cream);}
+  .values .section-label .en{color:var(--gold);}
+  .values .section-label .line{background:linear-gradient(90deg, var(--gold), transparent);}
+  .values h2{color:var(--cream);}
+  .values > .wrap > p.lead{max-width:600px;color:rgba(247,242,231,.75);margin-bottom:50px;}
+
+  .ticket-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:26px;
+  }
+
+  .ticket{
+    position:relative;
+    background:var(--cream);
+    color:var(--ink);
+    border-radius:8px;
+    display:flex;
+    overflow:hidden;
+    min-height:160px;
+  }
+  .ticket-stub{
+    width:34%;
+    background:var(--gold);
+    color:var(--night);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:14px 8px;
+    position:relative;
+    text-align:center;
+  }
+  .ticket-stub .no{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.7rem;
+    font-weight:600;
+  }
+  .ticket-stub .label{
+    font-size:.62rem;
+    letter-spacing:.12em;
+    margin-top:4px;
+  }
+  .ticket-stub::after{
+    content:"";
+    position:absolute;
+    right:-8px;top:50%;
+    transform:translateY(-50%);
+    width:16px;height:16px;
+    background:var(--night);
+    border-radius:50%;
+  }
+  .ticket-perf{
+    width:0;
+    border-left:2px dashed rgba(43,35,32,.25);
+  }
+  .ticket-body{
+    flex:1;
+    padding:22px 22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .ticket-body h3{
+    font-size:1.05rem;
+    margin-bottom:8px;
+    color:var(--night);
+  }
+  .ticket-body p{
+    font-size:.86rem;
+    color:var(--ink);
+    opacity:.85;
+  }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule{background:var(--cream);}
+  .itinerary{
+    position:relative;
+    margin-top:50px;
+    padding-left:26px;
+    border-left:2px dashed var(--teal);
+  }
+  .leg{
+    position:relative;
+    padding-bottom:44px;
+  }
+  .leg:last-child{padding-bottom:0;}
+  .leg::before{
+    content:"";
+    position:absolute;
+    left:-34px;top:4px;
+    width:12px;height:12px;
+    border-radius:50%;
+    background:var(--gold);
+    border:3px solid var(--cream);
+    box-shadow:0 0 0 2px var(--teal);
+  }
+  .leg .time{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--teal);
+    font-size:.85rem;
+    letter-spacing:.1em;
+    margin-bottom:4px;
+    display:block;
+  }
+  .leg h3{font-size:1.05rem;margin-bottom:6px;color:var(--night);}
+  .leg p{font-size:.88rem;max-width:520px;}
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    background:linear-gradient(160deg, var(--night), #24406b 60%, var(--teal));
+    color:var(--cream);
+    text-align:center;
+  }
+  .closing h2{color:var(--cream);font-size:clamp(1.6rem,3.4vw,2.3rem);margin-bottom:22px;}
+  .closing p{max-width:560px;margin:0 auto 40px;color:rgba(247,242,231,.85);font-size:.98rem;}
+
+  .board{
+    display:inline-block;
+    border:1px solid rgba(247,242,231,.4);
+    padding:26px 40px;
+    border-radius:6px;
+    margin-bottom:36px;
+    background:rgba(255,255,255,.04);
+  }
+  .board .en{font-size:.72rem;letter-spacing:.2em;color:var(--gold);display:block;margin-bottom:10px;}
+  .board .gate{font-family:'Shippori Mincho',serif;font-size:1.3rem;}
+
+  .cta-btn{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--night);
+    padding:16px 46px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.95rem;
+    letter-spacing:.04em;
+    box-shadow:0 8px 24px rgba(217,164,65,.35);
+    transition:transform .25s ease;
+  }
+  .cta-btn:hover{transform:translateY(-3px);}
+
+  footer{
+    text-align:center;
+    padding:26px;
+    font-size:.75rem;
+    color:rgba(247,242,231,.55);
+    background:var(--night);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:768px){
+    .hero{padding:70px 0 50px;min-height:auto;}
+    .hero-meta{flex-direction:column;gap:16px;}
+    .understanding-points{grid-template-columns:1fr;}
+    .ticket-grid{grid-template-columns:1fr;}
+    .ticket{flex-direction:column;}
+    .ticket-stub{width:100%;flex-direction:row;justify-content:center;gap:10px;padding:12px;}
+    .ticket-stub::after{display:none;}
+    .ticket-perf{display:none;}
+    section{padding:70px 0;}
+    .stamp{width:78px;height:78px;font-size:.6rem;top:-18px;right:14px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="stars"></div>
+    <svg class="flightpath" viewBox="0 0 1000 800" preserveAspectRatio="none">
+      <path d="M -50 700 Q 300 500 550 420 T 900 200" fill="none" stroke="rgba(247,242,231,.35)" stroke-width="1.5" stroke-dasharray="6 10"/>
+    </svg>
+    <div class="plane"></div>
+    <div class="wrap hero-inner">
+      <div class="ticket-tag"><span class="dot"></span> KAIROS ｜ PROPOSAL FOR persia3様</div>
+      <h1>「いつかひとりで旅してみたい」——<br>その気持ちを、<span>最初の一歩</span>に変えるLPを。</h1>
+      <p class="lead">
+        平日を働き通す会社員が、静かに温めてきた「ひとり旅」への憧れ。
+        その小さな灯りを、次のキャリアへの扉に変えるためのページを、Kairosが設計します。
+      </p>
+      <div class="hero-meta">
+        <div><b>CATEGORY</b>17 / LP制作</div>
+        <div><b>BUDGET</b>¥5,000〜（継続前提）</div>
+        <div><b>PROPOSAL BY</b>Kairos制作チーム</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNDERSTANDING -->
+  <section class="understanding">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="num en">01 / Understanding</span>
+        <span class="line"></span>
+      </div>
+      <h2 class="section-title">このLPが届けたい相手を、私たちも想像しました。</h2>
+
+      <div class="stamp-quote">
+        <div class="stamp">PASSPORT<span>persia3</span></div>
+        <p class="strong">「行きたいのに、行けていない」その揺れる気持ちに、ちゃんと言葉を渡したい。</p>
+        <p>
+          忙しい平日の合間に「ひとりで、どこか行ってみたい」とふと思う会社員の方々。
+          でも一歩を踏み出せない理由は、時間でもお金でもなく、
+          "何から始めればいいか分からない"という不安なのだと思います。
+          今回のLPは、そんな読者の背中をそっと押し、
+          クリエイターという新しい生き方への入口になるページ。
+          私たちはその温度感を、デザインと言葉の両方で守りたいと考えました。
+        </p>
+      </div>
+
+      <div class="understanding-points">
+        <div class="u-item">
+          <span class="en">01. Reader</span>
+          <p>ひとり旅に憧れながらも、最初の一歩を踏み出せずにいる会社員の方。</p>
+        </div>
+        <div class="u-item">
+          <span class="en">02. Purpose</span>
+          <p>旅への憧れを、クリエイターとしての行動へつなげる情報発信のLP。</p>
+        </div>
+        <div class="u-item">
+          <span class="en">03. Tone</span>
+          <p>押しつけず、寄り添う。静かな高揚感を大切にしたトーン設計。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="num en">02 / What We Offer</span>
+        <span class="line"></span>
+      </div>
+      <h2 class="section-title">Kairosがご用意する、搭乗前のチケット。</h2>
+      <p class="lead">
+        限られたご予算の中でも、読者の心を動かすページを届けるために。
+        Kairosが持つ強みを、5枚のチケットとしてお渡しします。
+      </p>
+
+      <div class="ticket-grid">
+        <div class="ticket">
+          <div class="ticket-stub"><div class="no">01</div><div class="label">COPY</div></div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-body">
+            <h3>想いを言葉にするコピーライティング</h3>
+            <p>「行ってみたい」という気持ちに寄り添う文章設計で、読者の共感を丁寧に積み上げます。</p>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-stub"><div class="no">02</div><div class="label">UX</div></div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-body">
+            <h3>一歩を後押しする導線設計</h3>
+            <p>登録・相談・購入など、次の行動へ自然に進めるスクロール導線を設計します。</p>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-stub"><div class="no">03</div><div class="label">SCOPE</div></div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-body">
+            <h3>ご予算に応じた柔軟な制作範囲</h3>
+            <p>¥5,000からでも品質を落とさず、必要な要素に絞って本質的な価値を届けます。</p>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-stub"><div class="no">04</div><div class="label">BRAND</div></div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-body">
+            <h3>継続を見据えた世界観づくり</h3>
+            <p>今後の情報発信やコンテンツ展開にも耐えるトーン&マナーを最初から設計します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="schedule">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="num en">03 / Itinerary</span>
+        <span class="line"></span>
+      </div>
+      <h2 class="section-title">ご提案する、旅程（進め方）</h2>
+
+      <div class="itinerary">
+        <div class="leg">
+          <span class="time en">Day 1 - Departure</span>
+          <h3>ヒアリング・方向性のすり合わせ</h3>
+          <p>読者像・伝えたいメッセージ・今後の展開イメージを共有いただきます。</p>
+        </div>
+        <div class="leg">
+          <span class="time en">Day 2-3 - In Flight</span>
+          <h3>構成・デザイン制作</h3>
+          <p>世界観とコピーを固め、1ページのLPとして組み上げていきます。</p>
+        </div>
+        <div class="leg">
+          <span class="time en">Day 4 - Layover</span>
+          <h3>初稿のご提出</h3>
+          <p>実際に見ていただき、細部の温度感を一緒に調整します。</p>
+        </div>
+        <div class="leg">
+          <span class="time en">Day 5 - Arrival</span>
+          <h3>修正・納品</h3>
+          <p>ご要望を反映し、公開できる形で納品。継続案件のご相談も歓迎です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="wrap">
+      <div class="board">
+        <span class="en">Boarding Call</span>
+        <div class="gate">最初のチケットは、もう手の中に。</div>
+      </div>
+      <h2>「ひとりで旅してみたい」を、一緒に形にしませんか。</h2>
+      <p>
+        小さなご予算からのスタートでも、私たちは本気でページと向き合います。
+        まずはメッセージで、想いを聞かせてください。
+      </p>
+      <a href="#" class="cta-btn">Kairosに相談してみる</a>
+    </div>
+  </section>
+
+  <footer>
+    Kairos ｜ Web制作・システム開発チーム — Proposal for persia3様
+  </footer>
+
+</body>
+</html>
